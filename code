@@ -1,0 +1,14 @@
+clc;
+clear;
+Vin = 12;         
+R1 = 10e3;         
+R2 = 5e3;          
+Vref = 5;          
+ADC_bits = 10;     
+Vadc = Vin * (R2 / (R1 + R2));
+ADC_levels = 2^ADC_bits;
+ADC_output = (Vadc / Vref) * (ADC_levels - 1);
+fprintf('Input Voltage (Vin) = %.2f V\n', Vin);
+fprintf('ADC Input Voltage (Vadc) = %.2f V\n', Vadc);
+fprintf('ADC Digital Output = %.0f\n', ADC_output);
+ 
